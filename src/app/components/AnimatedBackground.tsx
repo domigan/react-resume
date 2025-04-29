@@ -37,9 +37,6 @@ export default function AnimatedBackground() {
         canvas.width,
         canvas.height
       );
-      gradient.addColorStop(
-        1,
-        `hsl(${(gradientOffset * 40 + 120) % 360}, 70%, 30%)`
       gradient.addColorStop(0, colors[colorIndex1]);
       gradient.addColorStop(1, colors[colorIndex2]);
 
