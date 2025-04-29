@@ -63,9 +63,12 @@ export const exp = [
 ];
 
 export const skills = [
-  "Native in React, TypeScript, JavaScript, SQL, Node.js",
+  "Native in React, TypeScript, JavaScript, SQL, Node.js, Next.js",
   "Highly skilled with npm, Git, VS Code, Docker, AWS",
   "Previous experience in Java, C/C++, C#, Python, PHP",
-  "Highly experienced in relational database modeling, strong grasp of OOP design patterns and best practices, as well as web application modeling and design",
-  "Experience with various other visual and audio software including Figma, Canva, Ableton Live",
+  "Highly experienced in relational database modeling, strong grasp of design patterns and best practices, as well as web application modeling and design",
+  "Strong understanding of Agile development process and best practices",
+  "Strong experience with the Atlassian suite including Jira, Confluence, and Bitbucket",
+  "Experience with various design and prototyping tools including Figma & Canva",
+  "Experience with various CI/CD tools including Jenkins & CircleCI",
 ];

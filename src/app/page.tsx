@@ -15,8 +15,15 @@ export default function Resume() {
       <AnimatedBackground />
       <HeaderSummary />
       <Divider sx={{ backgroundColor: "#424242", marginY: "20px" }} />
+
       {/* Skills Section */}
       <Box sx={{ marginBottom: "20px" }}>
+        <Typography
+          variant="h5"
+          sx={{ marginBottom: "10px", color: "#90caf9" }}
+        >
+          Skills
+        </Typography>
         <LikeList title="Skills" body={skills} />
       </Box>
       <Divider sx={styles.divider} />

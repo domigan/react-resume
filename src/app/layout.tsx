@@ -33,6 +33,7 @@ export default function RootLayout({
       <body
         style={{
           fontFamily: `"Segoe UI", Tahoma, Geneva, Verdana, sans-serif`,
+          padding: "20px",
         }}
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

@@ -4,7 +4,6 @@ import { styles } from "../styles";
 export default function HeaderSummary() {
   return (
     <>
-      {/* Header Section */}
       <Paper elevation={3} sx={styles.headerPaper}>
         <Typography variant="h3" align="center" sx={styles.headerTitle}>
           Colin Baillie
@@ -16,7 +15,6 @@ export default function HeaderSummary() {
 
       <Divider sx={styles.divider} />
 
-      {/* Summary Section */}
       <Box sx={styles.sectionBox}>
         <Typography variant="h5" sx={styles.subHeader}>
           Summary
@@ -26,7 +24,15 @@ export default function HeaderSummary() {
           mobile platforms, with a strong desire to build tools that empower
           creatives. Working closely with product and design teams, I strive to
           write functional, responsive, and concise code on front- and back-end
-          systems and services to meet the needs of the users and stakeholders.
+          systems and services to meet the needs of the user.
+        </Typography>
+        <Typography>
+          As a true Greater Boston native, I currently reside in Wakefield with
+          my wife and two children. Not only am I a software engineer, but I am
+          also an independent music producer and DJ. I have been nominated for a
+          Boston Music Award, released three full length albums, and many EPs
+          and singles. My other hobbies include snowboarding, golf, disc golf,
+          viewing fine film and television, and travelling with my family.
         </Typography>
       </Box>
     </>
