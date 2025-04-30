@@ -1,14 +1,23 @@
 "use client";
 
-import { Box, Typography, Stack, Tabs, Tab, Divider } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Stack,
+  Tabs,
+  Tab,
+  Divider,
+  Button,
+} from "@mui/material";
 import { styles } from "./styles";
-import Expando from "./components/Expando";
+import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
+import Expando from "../components/Expando";
 import { exp, skills } from "./colin.data";
-import LikeList from "./components/LikeList";
-import EducationSummary from "./components/EducationSummary";
+import LikeList from "../components/LikeList";
+import EducationSummary from "../components/EducationSummary";
 import React from "react";
-import HeaderSummary from "./components/HeaderSummary";
-import Header from "./components/Header";
+import HeaderSummary from "../components/HeaderSummary";
+import Header from "../components/Header";
 
 export default function Main() {
   const [value, setValue] = React.useState("one");
@@ -32,6 +41,7 @@ export default function Main() {
         <Tab value="two" label="Skills" />
         <Tab value="three" label="Experience" />
         <Tab value="four" label="Education" />
+        <Tab value="five" label="Projects" />
       </Tabs>
       <Divider sx={{ backgroundColor: "#424242", marginY: "20px" }} />
       {value === "one" && <HeaderSummary />}
@@ -73,6 +83,26 @@ export default function Main() {
       {value === "four" && (
         <Box sx={styles.sectionBox}>
           <EducationSummary />
+        </Box>
+      )}
+      {value === "five" && (
+        <Box sx={styles.sectionBox}>
+          <Typography
+            variant="h5"
+            sx={{ marginBottom: "10px", color: "#90caf9" }}
+          >
+            Projects
+          </Typography>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              window.open("/music-player", "_blank");
+            }}
+            endIcon={<ThumbUpOffAltIcon />}
+          >
+            Run Discius
+          </Button>
         </Box>
       )}
     </>

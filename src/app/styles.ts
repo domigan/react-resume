@@ -8,6 +8,13 @@ export const styles = {
     width: "70%",
     margin: "0 auto",
   },
+  musicPlayer: {
+    backgroundColor: "#121212",
+    minHeight: "100vh",
+    padding: "20px",
+    color: "#e0e0e0",
+    margin: "0 auto",
+  },
   headerPaper: {
     padding: "20px",
     backgroundColor: "#1e1e1e",

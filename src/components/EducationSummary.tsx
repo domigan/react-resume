@@ -1,5 +1,5 @@
+import { styles } from "@/app/styles";
 import { Box, Stack, Typography } from "@mui/material";
-import { styles } from "../styles";
 
 export default function EducationSummary() {
   return (

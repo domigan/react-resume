@@ -1,5 +1,5 @@
 import { Paper, Typography } from "@mui/material";
-import { styles } from "../styles";
+import { styles } from "@/app/styles";
 
 export default function HeaderSummary() {
   return (

@@ -5,7 +5,7 @@ import {
   AccordionDetails,
   Stack,
 } from "@mui/material";
-import { styles } from "../styles";
+import { styles } from "@/app/styles";
 import UnfoldMoreDoubleIcon from "@mui/icons-material/UnfoldMoreDouble";
 import LikeList from "./LikeList";
 
