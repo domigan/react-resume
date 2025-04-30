@@ -4,7 +4,6 @@ import Track from "./Track";
 import Grid from "@mui/material/Grid";
 import ListItem from "@mui/material/ListItem";
 import { AudiusTrack } from "@/types/Audius.type";
-import Image from "next/image";
 
 export default function Queue({
   queue,
