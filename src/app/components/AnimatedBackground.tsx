@@ -25,19 +25,22 @@ export default function AnimatedBackground() {
     const drawGradient = () => {
       if (!ctx) return;
 
-      gradientOffset += 0.01; // Controls the speed of the animation
+      gradientOffset += 0.001; // Increase speed of the animation
 
-      const gradient = ctx.createLinearGradient(
-        0,
-        0,
-        canvas.width,
-        canvas.height
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+      const maxRadius = Math.sqrt(centerX ** 2 + centerY ** 2);
+
+      const gradient = ctx.createRadialGradient(
+        centerX,
+        centerY,
+        maxRadius * Math.abs(Math.sin(gradientOffset)), // Animate radius
+        centerX,
+        centerY,
+        maxRadius
       );
-      gradient.addColorStop(0, `hsl(${(gradientOffset * 40) % 360}, 70%, 30%)`);
-      gradient.addColorStop(
-        1,
-        `hsl(${(gradientOffset * 40 + 120) % 360}, 70%, 30%)`
-      );
+      gradient.addColorStop(0, `#00793d`);
+      gradient.addColorStop(1, `#0F0079`);
 
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
