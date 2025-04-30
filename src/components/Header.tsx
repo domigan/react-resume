@@ -1,4 +1,4 @@
-import { Paper, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { styles } from "@/app/styles";
 
 export default function HeaderSummary() {
