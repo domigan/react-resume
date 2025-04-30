@@ -21,7 +21,7 @@ export default function Expando({
   return (
     <Accordion>
       <AccordionSummary
-        expandIcon={<UnfoldMoreDoubleIcon sx={styles.accordionHeader} />}
+        expandIcon={<UnfoldMoreDoubleIcon sx={{ color: "aquamarine" }} />}
         sx={styles.accordionHeader}
       >
         <Stack>

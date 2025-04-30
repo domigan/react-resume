@@ -99,7 +99,7 @@ export default function Main() {
             onClick={() => {
               window.open("/music-player", "_blank");
             }}
-            endIcon={<ThumbUpOffAltIcon />}
+            startIcon={<ThumbUpOffAltIcon />}
           >
             Discius Music Player
           </Button>
@@ -120,7 +120,7 @@ export default function Main() {
             onClick={() => {
               window.open("http://domigan.co/lin", "_blank");
             }}
-            endIcon={<ThumbUpOffAltIcon />}
+            startIcon={<ThumbUpOffAltIcon />}
           >
             Music Production Home Page
           </Button>
