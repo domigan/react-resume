@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Box,
-  Typography,
-  Stack,
-  Tabs,
-  Tab,
-  Divider,
-  Paper,
-} from "@mui/material";
+import { Box, Typography, Stack, Tabs, Tab, Divider } from "@mui/material";
 import { styles } from "./styles";
 import Expando from "./components/Expando";
 import { exp, skills } from "./colin.data";
