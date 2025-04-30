@@ -97,7 +97,7 @@ export default function Main() {
             variant="contained"
             color="primary"
             onClick={() => {
-              window.open("/music-player", "_blank");
+              window.open("/discius", "_blank");
             }}
             startIcon={<ThumbUpOffAltIcon />}
           >

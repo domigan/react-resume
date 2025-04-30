@@ -34,18 +34,18 @@ export default function Accolades() {
         </Typography>
         <Box>
           <Typography variant="h6" sx={{ color: "#b0bec5" }}>
-            Boy Scouts of America - Troop 728 Reading, MA
-          </Typography>
-          <Typography variant="subtitle2" sx={{ color: "#757575" }}>
-            Eagle Scout Rank Awarded: September 2007
-          </Typography>
-        </Box>
-        <Box>
-          <Typography variant="h6" sx={{ color: "#b0bec5" }}>
             Boston Music Awards
           </Typography>
           <Typography variant="subtitle2" sx={{ color: "#757575" }}>
             Dance/Electronic Artist of the Year Nominee, 2023
+          </Typography>
+        </Box>
+        <Box>
+          <Typography variant="h6" sx={{ color: "#b0bec5" }}>
+            Boy Scouts of America - Troop 728 Reading, MA
+          </Typography>
+          <Typography variant="subtitle2" sx={{ color: "#757575" }}>
+            Eagle Scout Rank Awarded: September 2007
           </Typography>
         </Box>
       </Stack>

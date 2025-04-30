@@ -2,7 +2,7 @@ export const styles = {
   container: {
     backgroundColor: "#121212",
     minHeight: "100vh",
-    width: "90%",
+    width: "93%",
     padding: "20px",
     color: "#e0e0e0",
     margin: "0 auto",
