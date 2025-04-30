@@ -25,16 +25,35 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
-          rel="stylesheet"
-        ></link>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="description"
+          content="Professional resume of Colin Baillie, showcasing skills, experience, and education."
+        />
+        <meta name="author" content="Colin Baillie" />
+        <meta
+          name="keywords"
+          content="Colin Baillie, resume, software engineer, web developer, professional portfolio"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta
+          property="og:title"
+          content="Colin Baillie - Professional Resume"
+        />
+        <meta
+          property="og:description"
+          content="Explore the professional resume of Colin Baillie, including skills, experience, and education."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.colinbaillie.com" />
+        <meta
+          property="og:image"
+          content="https://yourwebsite.com/preview-image.jpg"
+        />
       </head>
       <body
-        style={{
-          fontFamily: `"Segoe UI", Tahoma, Geneva, Verdana, sans-serif`,
-          padding: "20px",
-        }}
+        style={{ padding: "36px" }}
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
