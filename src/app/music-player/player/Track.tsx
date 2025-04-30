@@ -1,5 +1,5 @@
+import { Typography } from "@mui/material";
 import React from "react";
-import "../../globals.css";
 
 export default function Track({
   title,
@@ -13,14 +13,18 @@ export default function Track({
   return (
     <div className="track-info">
       <p>
-        <i>
-          <a href={`https://www.audius.co${link}`} target={"_blank"}>
-            <b>{title}</b>
-          </a>
-        </i>
+        <Typography variant="body1" sx={{ color: "aquamarine" }}>
+          Artist: {artist}
+        </Typography>
       </p>
       <p>
-        <b>{artist}</b>
+        <i>
+          <a href={`https://www.audius.co${link}`} target={"_blank"}>
+            <Typography variant="body1" sx={{ color: "aquamarine" }}>
+              Title: {title}
+            </Typography>
+          </a>
+        </i>
       </p>
     </div>
   );

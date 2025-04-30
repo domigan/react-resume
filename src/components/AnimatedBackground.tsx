@@ -2,7 +2,11 @@
 
 import { useEffect, useRef } from "react";
 
-export default function AnimatedBackground() {
+export default function AnimatedBackground({
+  fillParent = false,
+}: {
+  fillParent?: boolean;
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -14,9 +18,21 @@ export default function AnimatedBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Set the canvas size to fill the window
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    // Set the canvas size
+    const setCanvasSize = () => {
+      if (fillParent) {
+        const parent = canvas.parentElement;
+        if (parent) {
+          canvas.width = parent.clientWidth;
+          canvas.height = parent.clientHeight;
+        }
+      } else {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+    };
+
+    setCanvasSize();
 
     // Create a gradient animation
     let gradientOffset = 0;
@@ -40,7 +56,7 @@ export default function AnimatedBackground() {
         maxRadius
       );
       gradient.addColorStop(0, `#00793d`);
-      gradient.addColorStop(1, `#0F0079`);
+      gradient.addColorStop(1, `#00ff7f`);
 
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -51,8 +67,7 @@ export default function AnimatedBackground() {
     drawGradient();
 
     const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      setCanvasSize();
     };
 
     window.addEventListener("resize", handleResize);
@@ -60,12 +75,19 @@ export default function AnimatedBackground() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [fillParent]);
 
   return (
     <canvas
       ref={canvasRef}
-      style={{ position: "fixed", top: 0, left: 0, zIndex: -1 }}
+      style={{
+        position: fillParent ? "absolute" : "fixed",
+        top: 0,
+        left: 0,
+        zIndex: -1,
+        width: fillParent ? "100%" : undefined,
+        height: fillParent ? "100%" : undefined,
+      }}
     />
   );
 }

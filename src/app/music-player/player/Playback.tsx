@@ -1,6 +1,10 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import { Stack } from "@mui/material";
+import AnimatedBackground from "@/components/AnimatedBackground";
+import Track from "./Track";
+import { Search } from "./Search";
+import { Stop, PlayArrow, SkipNext } from "@mui/icons-material";
 // import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 // import StopIcon from "@mui/icons-material/Stop";
 // import SkipNextIcon from "@mui/icons-material/SkipNext";
@@ -10,30 +14,54 @@ export default function Playback({
   stop,
   skip,
   playing,
+  title,
+  artist,
+  link,
+  select_genre,
+  selected_genre,
 }: {
   play: () => void;
   stop: () => void;
   skip: () => void;
   playing: boolean;
+  title: string;
+  artist: string;
+  link: string;
+  select_genre: (genre: string) => void;
+  selected_genre: string;
 }) {
   return (
-    <Stack direction="row" className="controls" spacing={2}>
-      {!playing && (
-        <Button variant="contained" onClick={play}>
-          {/* <PlayArrowIcon /> */}
-          PLAY
+    <Stack className="controls" spacing={2}>
+      <Stack direction={"row"} spacing={2}>
+        {!playing && (
+          <Button variant="contained" onClick={play} endIcon={<PlayArrow />}>
+            {/* <PlayArrowIcon /> */}
+            PLAY
+          </Button>
+        )}
+        {playing && (
+          <Button
+            variant="contained"
+            className="playback-btn"
+            onClick={stop}
+            endIcon={<Stop />}
+          >
+            {/* <StopIcon /> */}
+            STOP
+          </Button>
+        )}
+        <Button
+          variant="contained"
+          className="playback-btn"
+          onClick={skip}
+          endIcon={<SkipNext />}
+        >
+          {/* <SkipNextIcon /> */}
+          NEXT
         </Button>
-      )}
-      {playing && (
-        <Button variant="contained" className="playback-btn" onClick={stop}>
-          {/* <StopIcon /> */}
-          STOP
-        </Button>
-      )}
-      <Button variant="contained" className="playback-btn" onClick={skip}>
-        {/* <SkipNextIcon /> */}
-        NEXT
-      </Button>
+        <Track title={title} artist={artist} link={link} />
+      </Stack>
+      <Search onChange={select_genre} selected_genre={selected_genre} />
     </Stack>
   );
 }

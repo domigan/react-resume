@@ -9,11 +9,10 @@ export const styles = {
     margin: "0 auto",
   },
   musicPlayer: {
-    backgroundColor: "#121212",
     minHeight: "100vh",
-    padding: "20px",
     color: "#e0e0e0",
     margin: "0 auto",
+    maxWidth: "400px",
   },
   headerPaper: {
     padding: "20px",

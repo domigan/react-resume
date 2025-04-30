@@ -32,12 +32,13 @@ export function Search({ onChange, selected_genre }: SearchProps) {
 
   return (
     <div className={"search-container"}>
-      <FormControl fullWidth>
+      <FormControl>
         <InputLabel id="genre-select-label">Chart</InputLabel>
         <Select
           variant="outlined"
           sx={{
             width: "100%",
+            borderColor: "white",
             backgroundColor: "white",
           }}
           labelId="genre-select-label"

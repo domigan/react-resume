@@ -11,6 +11,7 @@ import { Search } from "../player/Search";
 import Vinyl from "./Vinyl";
 import Track from "../player/Track";
 import "../../globals.css";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 export type MusicState = {
   playing: boolean;
@@ -92,18 +93,23 @@ export default function Turntable() {
   const { selected_track, playing, selected_genre, queue, queue_index } = state;
   return (
     <Stack direction={"row"} spacing={2} className="turntable-container">
-      <Stack className="playback-queue-container col-4 " spacing={2}>
+      <Stack className="playback-queue-container" spacing={2}>
         {selected_track && (
           <div className="track-container">
-            <Playback play={play} skip={skip} stop={stop} playing={playing} />
-            <Track
+            <AnimatedBackground fillParent={true} />
+            <Playback
+              play={play}
+              skip={skip}
+              stop={stop}
+              playing={playing}
               title={selected_track.title}
               artist={selected_track.user.name}
               link={selected_track.permalink}
+              select_genre={select_genre}
+              selected_genre={selected_genre}
             />
           </div>
         )}
-        <Search onChange={select_genre} selected_genre={selected_genre} />
         <Queue queue={queue} queue_index={queue_index} />
       </Stack>
       <Box className="vinyl-container col-8">

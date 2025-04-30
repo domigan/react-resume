@@ -76,18 +76,18 @@ code {
   z-index: 1000;
   background-color: #ffffff;
   color: #282c34;
+  max-width: 520px;
 }
 
 .track-container {
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-  width: 100%;
   height: 200px;
   padding: 10px;
   font-size: medium;
 }
 
 .image1 {
-  height: 52vmin;
+  height: "500px";
   position: absolute;
   left: 0;
   top: 0;
@@ -99,7 +99,7 @@ code {
 }
 
 .image2 {
-  height: 17vmin;
+  height: 22vmin;
   position: absolute;
   left: 0;
   top: 0;

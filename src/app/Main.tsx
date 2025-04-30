@@ -101,8 +101,39 @@ export default function Main() {
             }}
             endIcon={<ThumbUpOffAltIcon />}
           >
-            Run Discius
+            Discius Music Player
           </Button>
+          <Typography
+            variant="body1"
+            sx={{ marginTop: "10px", color: "#b0bec5" }}
+          >
+            A music player that uses the Audius API to play music. It is built
+            with React and TypeScript. It is a work in progress and is not fully
+            designed yet. Adding more features and improving the design is on my
+            to-do list.
+          </Typography>
+
+          <Divider sx={styles.divider} />
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              window.open("http://domigan.co/lin", "_blank");
+            }}
+            endIcon={<ThumbUpOffAltIcon />}
+          >
+            Music Production Home Page
+          </Button>
+          <Typography
+            variant="body1"
+            sx={{ marginTop: "10px", color: "#b0bec5" }}
+          >
+            My personal music production home page. It is a constant work in
+            progress as I am releasing new music and updating the site. It is
+            built with raw HTML, CSS, and JavaScript. Uses a variety of embeded
+            players to play music. Essentially a "code golf" project to see how
+            small I can make my site while still being functional.
+          </Typography>
         </Box>
       )}
     </>

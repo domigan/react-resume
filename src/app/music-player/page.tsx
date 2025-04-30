@@ -6,10 +6,5 @@ import { styles } from "../styles";
 import "../globals.css";
 
 export default function Page() {
-  return (
-    <Box sx={styles.musicPlayer}>
-      <AnimatedBackground />
-      <Turntable />
-    </Box>
-  );
+  return <Turntable />;
 }
