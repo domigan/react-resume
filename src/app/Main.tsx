@@ -14,7 +14,7 @@ import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import Expando from "../components/Expando";
 import { exp, skills } from "./colin.data";
 import LikeList from "../components/LikeList";
-import EducationSummary from "../components/EducationSummary";
+import Accolades from "../components/Accolades";
 import React from "react";
 import HeaderSummary from "../components/HeaderSummary";
 import Header from "../components/Header";
@@ -40,7 +40,7 @@ export default function Main() {
         <Tab value="one" label="Summary" />
         <Tab value="two" label="Skills" />
         <Tab value="three" label="Experience" />
-        <Tab value="four" label="Education" />
+        <Tab value="four" label="Accolades" />
         <Tab value="five" label="Projects" />
       </Tabs>
       <Divider sx={{ backgroundColor: "#424242", marginY: "20px" }} />
@@ -82,7 +82,7 @@ export default function Main() {
       {/* Education Section */}
       {value === "four" && (
         <Box sx={styles.sectionBox}>
-          <EducationSummary />
+          <Accolades />
         </Box>
       )}
       {value === "five" && (
