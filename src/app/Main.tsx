@@ -131,7 +131,7 @@ export default function Main() {
             My personal music production home page. It is a constant work in
             progress as I am releasing new music and updating the site. It is
             built with raw HTML, CSS, and JavaScript. Uses a variety of embeded
-            players to play music. Essentially a "code golf" project to see how
+            players to play music. Essentially a code golf project to see how
             small I can make my site while still being functional.
           </Typography>
         </Box>

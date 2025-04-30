@@ -1,13 +1,9 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import { Stack } from "@mui/material";
-import AnimatedBackground from "@/components/AnimatedBackground";
 import Track from "./Track";
 import { Search } from "./Search";
 import { Stop, PlayArrow, SkipNext } from "@mui/icons-material";
-// import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-// import StopIcon from "@mui/icons-material/Stop";
-// import SkipNextIcon from "@mui/icons-material/SkipNext";
 
 export default function Playback({
   play,

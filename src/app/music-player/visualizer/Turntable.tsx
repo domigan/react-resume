@@ -7,9 +7,7 @@ import { AudiusTrack } from "@/types/Audius.type";
 import { Box, Stack } from "@mui/material";
 import Playback from "../player/Playback";
 import Queue from "../player/Queue";
-import { Search } from "../player/Search";
 import Vinyl from "./Vinyl";
-import Track from "../player/Track";
 import "../../globals.css";
 import AnimatedBackground from "@/components/AnimatedBackground";
 

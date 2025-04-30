@@ -1,7 +1,6 @@
 import React from "react";
 import List from "@mui/material/List";
 import Track from "./Track";
-import Grid from "@mui/material/Grid";
 import ListItem from "@mui/material/ListItem";
 import { AudiusTrack } from "@/types/Audius.type";
 import { Box, Stack } from "@mui/material";
