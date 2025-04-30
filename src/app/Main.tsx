@@ -77,6 +77,7 @@ export default function Main() {
           </Stack>
         </Box>
       )}
+      {/* Education Section */}
       {value === "four" && (
         <Box sx={styles.sectionBox}>
           <EducationSummary />
