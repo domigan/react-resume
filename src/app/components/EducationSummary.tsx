@@ -1,9 +1,9 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { styles } from "../styles";
 
 export default function EducationSummary() {
   return (
-    <Box sx={styles.sectionBox}>
+    <Stack sx={styles.sectionBox} spacing={2}>
       <Typography variant="h5" sx={styles.subHeader}>
         Education
       </Typography>
@@ -18,6 +18,22 @@ export default function EducationSummary() {
           Degree Awarded: May 17, 2014
         </Typography>
       </Box>
-    </Box>
+      <Box>
+        <Typography variant="h6" sx={{ color: "#b0bec5" }}>
+          Malden Catholic High School
+        </Typography>
+        <Typography variant="subtitle2" sx={{ color: "#757575" }}>
+          Diploma Awarded: May 17, 2008
+        </Typography>
+      </Box>
+      <Box>
+        <Typography variant="h6" sx={{ color: "#b0bec5" }}>
+          Boy Scouts of America
+        </Typography>
+        <Typography variant="subtitle2" sx={{ color: "#757575" }}>
+          Eagle Scout Rank Awarded: September 2007
+        </Typography>
+      </Box>
+    </Stack>
   );
 }

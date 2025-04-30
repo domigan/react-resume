@@ -1,21 +1,10 @@
-import { Box, Divider, Paper, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { styles } from "../styles";
 
 export default function HeaderSummary() {
   return (
     <>
-      <Paper elevation={3} sx={styles.headerPaper}>
-        <Typography variant="h3" align="center" sx={styles.headerTitle}>
-          Colin Baillie
-        </Typography>
-        <Typography variant="h6" align="center" sx={styles.headerSubtitle}>
-          Wakefield, MA | (339) 927-5951 | domigan16@gmail.com
-        </Typography>
-      </Paper>
-
-      <Divider sx={styles.divider} />
-
-      <Box sx={styles.sectionBox}>
+      <Stack sx={styles.sectionBox} spacing={2}>
         <Typography variant="h5" sx={styles.subHeader}>
           Summary
         </Typography>
@@ -34,7 +23,7 @@ export default function HeaderSummary() {
           and singles. My other hobbies include snowboarding, golf, disc golf,
           viewing fine film and television, and travelling with my family.
         </Typography>
-      </Box>
+      </Stack>
     </>
   );
 }
