@@ -2,10 +2,9 @@ export const styles = {
   container: {
     backgroundColor: "#121212",
     minHeight: "100vh",
-    maxWidth: "900px",
+    width: "90%",
     padding: "20px",
     color: "#e0e0e0",
-    width: "70%",
     margin: "0 auto",
   },
   musicPlayer: {
