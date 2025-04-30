@@ -92,7 +92,7 @@ export default function Turntable() {
   const { selected_track, playing, selected_genre, queue, queue_index } = state;
   return (
     <Stack direction={"row"} spacing={2} className="turntable-container">
-      <Box className="playback-queue-container col-4">
+      <Stack className="playback-queue-container col-4 " spacing={2}>
         {selected_track && (
           <div className="track-container">
             <Playback play={play} skip={skip} stop={stop} playing={playing} />
@@ -103,13 +103,9 @@ export default function Turntable() {
             />
           </div>
         )}
-        <div>
-          <Search onChange={select_genre} selected_genre={selected_genre} />
-        </div>
-        <div>
-          <Queue queue={queue} queue_index={queue_index} />
-        </div>
-      </Box>
+        <Search onChange={select_genre} selected_genre={selected_genre} />
+        <Queue queue={queue} queue_index={queue_index} />
+      </Stack>
       <Box className="vinyl-container col-8">
         {selected_track && selected_track.artwork && (
           <Vinyl artwork={selected_track.artwork} playing={playing} />

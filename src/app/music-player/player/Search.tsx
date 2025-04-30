@@ -31,9 +31,9 @@ export function Search({ onChange, selected_genre }: SearchProps) {
   };
 
   return (
-    <div className={"-container"}>
+    <div className={"search-container"}>
       <FormControl fullWidth>
-        <InputLabel id="genre-select-label">Genre/Trending</InputLabel>
+        <InputLabel id="genre-select-label">Chart</InputLabel>
         <Select
           variant="outlined"
           sx={{

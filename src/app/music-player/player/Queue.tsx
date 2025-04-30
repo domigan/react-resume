@@ -4,6 +4,7 @@ import Track from "./Track";
 import Grid from "@mui/material/Grid";
 import ListItem from "@mui/material/ListItem";
 import { AudiusTrack } from "@/types/Audius.type";
+import { Box, Stack } from "@mui/material";
 
 export default function Queue({
   queue,
@@ -25,8 +26,8 @@ export default function Queue({
             className={"queue-item w-full"}
             key={`${track.id}_${index}`}
           >
-            <Grid container width={"100%"}>
-              <Grid className="col-3">
+            <Stack direction="row" spacing={2} width={"100%"}>
+              <Box className="col-3">
                 {source && (
                   <img
                     src={source}
@@ -36,15 +37,15 @@ export default function Queue({
                     height="60"
                   />
                 )}
-              </Grid>
-              <Grid className="col-9">
+              </Box>
+              <Box className="col-9">
                 <Track
                   title={track.title}
                   artist={track.user.name}
                   link={track.permalink}
                 />
-              </Grid>
-            </Grid>
+              </Box>
+            </Stack>
           </ListItem>
         );
       })}
