@@ -9,15 +9,15 @@ import {
   Divider,
   Button,
 } from "@mui/material";
-import { styles } from "./styles";
+import { styles } from "../app/styles";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
-import Expando from "../components/Expando";
-import { exp, skills } from "./colin.data";
-import LikeList from "../components/LikeList";
-import Accolades from "../components/Accolades";
+import Expando from "./Expando";
+import { exp, skills } from "../app/colin.data";
+import LikeList from "./LikeList";
+import Accolades from "./Accolades";
 import React from "react";
-import HeaderSummary from "../components/HeaderSummary";
-import Header from "../components/Header";
+import HeaderSummary from "./HeaderSummary";
+import Header from "./Header";
 
 export default function Main() {
   const [value, setValue] = React.useState("one");
@@ -35,7 +35,7 @@ export default function Main() {
         textColor="inherit"
         indicatorColor="secondary"
         aria-label="secondary tabs example"
-        variant="fullWidth"
+        variant="scrollable"
       >
         <Tab value="one" label="Summary" />
         <Tab value="two" label="Skills" />

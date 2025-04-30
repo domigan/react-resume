@@ -1,13 +1,12 @@
-import { Box } from "@mui/material";
 import AnimatedBackground from "../components/AnimatedBackground";
 import { styles } from "./styles";
-import Main from "./Main";
+import Main from "../components/Main";
 
 export default function Resume() {
   return (
-    <Box sx={styles.container}>
+    <div style={styles.container}>
       <AnimatedBackground />
       <Main />
-    </Box>
+    </div>
   );
 }
