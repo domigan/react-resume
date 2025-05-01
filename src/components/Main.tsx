@@ -4,7 +4,7 @@ import React from "react";
 import { Box, Stack, Tabs, Tab, Divider } from "@mui/material";
 import { styles } from "../app/styles";
 import Expando from "./Expando";
-import { experience, info, projects, skills } from "../app/colin.data";
+import { experience, projects, skills } from "../app/colin.data";
 import LikeList from "./LikeList";
 import Accolades from "./Accolades";
 import HeaderSummary from "./HeaderSummary";
