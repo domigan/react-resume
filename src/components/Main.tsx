@@ -1,17 +1,8 @@
 "use client";
 
 import React from "react";
-import {
-  Box,
-  Typography,
-  Stack,
-  Tabs,
-  Tab,
-  Divider,
-  Button,
-} from "@mui/material";
+import { Box, Stack, Tabs, Tab, Divider } from "@mui/material";
 import { styles } from "../app/styles";
-import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import Expando from "./Expando";
 import { exp, projects, skills } from "../app/colin.data";
 import LikeList from "./LikeList";

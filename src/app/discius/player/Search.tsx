@@ -2,7 +2,7 @@ import React from "react";
 import { genres } from "../actions/utils";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import { FormControl, InputLabel } from "@mui/material";
+import { FormControl } from "@mui/material";
 import "../../globals.css";
 
 type SearchProps = {
