@@ -32,8 +32,7 @@ export function Search({ onChange, selected_genre }: SearchProps) {
 
   return (
     <div className={"search-container"}>
-      <FormControl>
-        <InputLabel id="genre-select-label">Chart</InputLabel>
+      <FormControl fullWidth>
         <Select
           variant="outlined"
           sx={{
@@ -41,10 +40,8 @@ export function Search({ onChange, selected_genre }: SearchProps) {
             borderColor: "white",
             backgroundColor: "white",
           }}
-          labelId="genre-select-label"
           id="genre-select"
           value={selected_genre}
-          label="Genre"
           onChange={(e) => {
             e.stopPropagation();
             onSelect(e.target.value);
