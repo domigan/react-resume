@@ -23,10 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div
-      style={{ padding: "36px" }}
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-    >
+    <div className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       {children}
     </div>
   );
