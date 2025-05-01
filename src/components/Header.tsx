@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material";
+import { Divider, Stack, Typography } from "@mui/material";
 import { styles } from "@/app/styles";
 import ContactChip from "./ContactChip";
 import { Email, LocationCity, PhoneCallback } from "@mui/icons-material";
@@ -10,6 +10,7 @@ export default function HeaderSummary() {
       <Typography variant="h3" align="center" sx={styles.headerTitle}>
         {info.name}
       </Typography>
+      <Divider sx={styles.divider} />
       <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
         <Stack direction={"row"} spacing={2} sx={styles.headerSubtitle}>
           <ContactChip
