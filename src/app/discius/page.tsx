@@ -1,7 +1,13 @@
 import React from "react";
 import Turntable from "./visualizer/Turntable";
 import "../globals.css";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 export default function Discius() {
-  return <Turntable />;
+  return (
+    <>
+      <AnimatedBackground invert={true} fillParent={true} />
+      <Turntable />
+    </>
+  );
 }

@@ -90,7 +90,7 @@ export default function Turntable() {
 
   const { selected_track, playing, selected_genre, queue, queue_index } = state;
   return (
-    <Stack direction={"row"} spacing={2} className="turntable-container">
+    <Stack direction={"row"} spacing={2}>
       <Stack className="playback-queue-container" spacing={2}>
         {selected_track && (
           <div className="track-container">
