@@ -84,13 +84,13 @@ export const projects = [
   {
     title: "Discius Music Player",
     description:
-      "A music player that uses the Audius API to play music. It is built with React and TypeScript. It is a work in progress and is not fully designed yet. Adding more features and improving the design is on my to-do list.",
+      "A music player that uses the Audius API to play music. This app is built with React and TypeScript. This is an ongoing work in progress and is not fully designed yet. Adding more features and improving the design is on my to-do list.",
     link: "/discius",
   },
   {
     title: "Music Production Home Page",
     description:
-      "My personal music production home page. It is a constant work in progress as I am releasing new music and updating the site. It is built with raw HTML, CSS, and JavaScript. Uses a variety of embedded players to play music. Essentially a code golf project to see how small I can make my site while still being functional.",
+      "My personal music production home page. This webpage is a constant work in progress as I am releasing new music and updating the site. Built with raw HTML, CSS, and JavaScript. Uses a variety of embedded players to play music. Essentially a code golf project to see how small I can make my site while still being functional.",
     link: "http://domigan.co/lin",
   },
 ];
