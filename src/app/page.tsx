@@ -4,9 +4,9 @@ import Main from "../components/Main";
 
 export default function Resume() {
   return (
-    <div style={styles.container}>
+    <>
       <AnimatedBackground />
       <Main />
-    </div>
+    </>
   );
 }

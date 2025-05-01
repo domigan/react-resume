@@ -1,12 +1,4 @@
 export const styles = {
-  container: {
-    backgroundColor: "#121212",
-    minHeight: "100vh",
-    width: "93%",
-    padding: "20px",
-    color: "#e0e0e0",
-    margin: "0 auto",
-  },
   musicPlayer: {
     minHeight: "100vh",
     color: "#e0e0e0",
@@ -15,7 +7,7 @@ export const styles = {
   },
   headerPaper: {
     padding: "20px",
-    backgroundColor: "#1e1e1e",
+    backgroundColor: "linear-gradient(45deg, #1e1e1e, #424242)",
     marginBottom: "20px",
     fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
   },
@@ -25,6 +17,11 @@ export const styles = {
   },
   headerSubtitle: {
     color: "#b0bec5",
+    fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
+  },
+  chip: {
+    backgroundColor: "#90caf9",
+    color: "#1e1e1e",
     fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
   },
   subHeader: {
@@ -50,5 +47,17 @@ export const styles = {
   accordionBody: {
     backgroundColor: "#2e2e2e",
     color: "#90caf9",
+  },
+  card: {
+    borderRadius: "10px",
+    backgroundColor: "rgba(30, 30, 30, 0.8)",
+    backgroundImage: "linear-gradient(45deg, #1e1e1e, #424242)",
+    padding: "20px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    backdropFilter: "blur(10px)",
+    border: "1px solid rgba(255, 255, 255, 0.1)",
+    margin: "20px auto",
+    maxWidth: "800px",
+    color: "#e0e0e0",
   },
 };

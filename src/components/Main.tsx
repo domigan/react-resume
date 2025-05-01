@@ -8,6 +8,7 @@ import {
   Tab,
   Divider,
   Button,
+  Card,
 } from "@mui/material";
 import { styles } from "../app/styles";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
@@ -26,7 +27,7 @@ export default function Main() {
   };
 
   return (
-    <>
+    <div style={styles.card}>
       <Header />
       <Divider sx={styles.divider} />
       <Tabs
@@ -136,6 +137,6 @@ export default function Main() {
           </Typography>
         </Box>
       )}
-    </>
+    </div>
   );
 }
