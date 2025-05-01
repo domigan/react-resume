@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { list_tracks, start_stream } from "../actions/actions";
 import { genres, random_genre } from "../actions/utils";
 import { AudiusTrack } from "@/types/Audius.type";
@@ -18,6 +18,7 @@ export type MusicState = {
   selected_track: AudiusTrack | null;
   audio: HTMLAudioElement | null;
   selected_genre: string;
+  disabled: boolean;
 };
 
 const initState: MusicState = {
@@ -27,6 +28,7 @@ const initState: MusicState = {
   selected_track: null,
   audio: null,
   selected_genre: genres[0],
+  disabled: false,
 };
 
 export default function Turntable() {
@@ -35,6 +37,7 @@ export default function Turntable() {
   const play = async () => {
     const { selected_track } = state;
     if (selected_track) {
+      setState({ ...state, disabled: true });
       const audio = await start_stream(selected_track.id);
 
       if (audio) {
@@ -43,7 +46,7 @@ export default function Turntable() {
           skip();
           play();
         };
-        setState({ ...state, playing: true, audio });
+        setState({ ...state, playing: true, audio, disabled: true });
       } else {
         console.error("Error starting audio stream");
         setState({ ...state, playing: false });
@@ -62,6 +65,7 @@ export default function Turntable() {
     }
     const selected_track = queue[queue_index];
     setState({ ...state, selected_track, queue_index });
+    play();
   };
 
   const stop = () => {
@@ -88,6 +92,12 @@ export default function Turntable() {
     fetchTracks();
   }, []);
 
+  useEffect(() => {
+    if (state.playing && state.audio) {
+      setState({ ...state, disabled: false });
+    }
+  }, [state.playing, state.audio]);
+
   const { selected_track, playing, selected_genre, queue, queue_index } = state;
   return (
     <>
@@ -96,6 +106,7 @@ export default function Turntable() {
           <div className="track-container">
             <AnimatedBackground fillParent={true} />
             <Playback
+              disabled={state.disabled}
               play={play}
               skip={skip}
               stop={stop}

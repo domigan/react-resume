@@ -7,6 +7,7 @@ import { Stop, PlayArrow, SkipNext } from "@mui/icons-material";
 import { AudiusUser } from "@/types/Audius.type";
 
 export default function Playback({
+  disabled,
   play,
   stop,
   skip,
@@ -17,6 +18,7 @@ export default function Playback({
   select_genre,
   selected_genre,
 }: {
+  disabled: boolean;
   play: () => void;
   stop: () => void;
   skip: () => void;
@@ -31,12 +33,15 @@ export default function Playback({
     <Stack className="controls" spacing={2}>
       <Grid container spacing={2} className="playback-btns">
         <Grid>
-          {!playing && (
-            <Button variant="contained" onClick={play} endIcon={<PlayArrow />}>
-              {/* <PlayArrowIcon /> */}
-              PLAY
-            </Button>
-          )}
+          <Button
+            disabled={disabled}
+            className="playback-btn"
+            variant="contained"
+            onClick={play}
+            endIcon={playing ? <Stop /> : <PlayArrow />}
+          >
+            {playing ? "STOP" : "PLAY"}
+          </Button>
         </Grid>
         <Grid>
           <Button
@@ -50,19 +55,6 @@ export default function Playback({
           </Button>
         </Grid>
 
-        {playing && (
-          <Grid>
-            <Button
-              variant="contained"
-              className="playback-btn"
-              onClick={stop}
-              endIcon={<Stop />}
-            >
-              {/* <StopIcon /> */}
-              STOP
-            </Button>
-          </Grid>
-        )}
         <Grid width={"100%"}>
           <Track title={title} artist={user.name} link={link} />
         </Grid>
