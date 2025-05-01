@@ -4,7 +4,7 @@ import React from "react";
 import { Box, Stack, Tabs, Tab, Divider } from "@mui/material";
 import { styles } from "../app/styles";
 import Expando from "./Expando";
-import { exp, projects, skills } from "../app/colin.data";
+import { experience, projects, skills } from "../app/colin.data";
 import LikeList from "./LikeList";
 import Accolades from "./Accolades";
 import HeaderSummary from "./HeaderSummary";
@@ -29,7 +29,7 @@ export default function Main() {
     three: (
       <Section title="Experience">
         <Stack spacing={2}>
-          {exp.map((job, index) => (
+          {experience.map((job, index) => (
             <Expando
               key={index}
               title={job.company}

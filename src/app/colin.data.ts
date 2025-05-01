@@ -5,7 +5,7 @@ export const info = {
   cell: "(339) 927-5951",
 };
 
-export const exp = [
+export const experience = [
   {
     company: "1up Health",
     jobTitle: "Senior Software Engineer",
