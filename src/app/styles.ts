@@ -9,11 +9,9 @@ export const styles = {
     padding: "20px",
     backgroundColor: "linear-gradient(45deg, #1e1e1e, #424242)",
     marginBottom: "20px",
-    fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
   },
   headerTitle: {
     color: "#90caf9",
-    fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
   },
   headerSubtitle: {
     color: "#b0bec5",

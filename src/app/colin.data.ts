@@ -1,5 +1,8 @@
+import { title } from "process";
+
 export const info = {
   name: "Colin Baillie",
+  title: "Sr. Web Software Engineer | Music Producer | Film Enthusiast",
   locale: "Boston, MA",
   email: "domigan16@gmail.com",
   cell: "(339) 927-5951",

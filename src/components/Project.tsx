@@ -1,5 +1,5 @@
 import { ThumbUpOffAlt } from "@mui/icons-material";
-import { Button, Typography } from "@mui/material";
+import { Button, Divider, Typography } from "@mui/material";
 
 export function Project({
   title,
@@ -23,6 +23,7 @@ export function Project({
       <Typography variant="body1" sx={{ marginTop: "10px", color: "#b0bec5" }}>
         {description}
       </Typography>
+      <Divider sx={{ margin: "20px 0" }} />
     </>
   );
 }

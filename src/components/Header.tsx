@@ -10,6 +10,9 @@ export default function HeaderSummary() {
       <Typography variant="h2" align="center" sx={styles.headerTitle}>
         {info.name}
       </Typography>
+      <Typography variant="body1" align="center" sx={styles.headerTitle}>
+        {info.title}
+      </Typography>
       <Divider sx={styles.divider} />
       <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
         <Stack direction={"row"} spacing={2} sx={styles.headerSubtitle}>
