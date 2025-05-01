@@ -9,7 +9,6 @@ import { AudiusUser } from "@/types/Audius.type";
 export default function Playback({
   disabled,
   play,
-  stop,
   skip,
   playing,
   title,
@@ -20,7 +19,6 @@ export default function Playback({
 }: {
   disabled: boolean;
   play: () => void;
-  stop: () => void;
   skip: () => void;
   playing: boolean;
   title: string;

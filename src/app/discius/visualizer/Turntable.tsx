@@ -109,7 +109,6 @@ export default function Turntable() {
               disabled={state.disabled}
               play={play}
               skip={skip}
-              stop={stop}
               playing={playing}
               title={selected_track.title}
               user={selected_track.user}
