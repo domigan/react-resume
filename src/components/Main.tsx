@@ -4,7 +4,7 @@ import React from "react";
 import { Box, Stack, Tabs, Tab, Divider } from "@mui/material";
 import { styles } from "../app/styles";
 import Expando from "./Expando";
-import { experience, projects, skills } from "../app/colin.data";
+import { experience, info, projects, skills } from "../app/colin.data";
 import LikeList from "./LikeList";
 import Accolades from "./Accolades";
 import HeaderSummary from "./HeaderSummary";
@@ -59,6 +59,7 @@ export default function Main() {
     ),
   };
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 600;
   return (
     <div style={styles.card}>
       <Header />
@@ -66,18 +67,12 @@ export default function Main() {
       <Tabs
         value={tabValue}
         onChange={handleChange}
+        centered={true}
         textColor="inherit"
         indicatorColor="secondary"
         aria-label="secondary tabs example"
-        variant="fullWidth"
+        variant={isMobile ? "scrollable" : "fullWidth"}
         sx={{
-          alignContent: "center",
-          justifyContent: "center",
-          alignItems: "center",
-          display: "flex",
-          flexDirection: "row",
-          gap: "10px",
-          padding: "10px",
           marginBottom: "20px",
           backgroundImage: "linear-gradient(45deg, #1e1e1e, #424242)",
           backgroundColor: "#424242",

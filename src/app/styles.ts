@@ -8,7 +8,6 @@ export const styles = {
   headerPaper: {
     padding: "20px",
     backgroundColor: "linear-gradient(45deg, #1e1e1e, #424242)",
-    marginBottom: "20px",
   },
   headerTitle: {
     color: "#90caf9",
@@ -29,11 +28,9 @@ export const styles = {
   },
   divider: {
     backgroundColor: "#424242",
-    marginY: "20px",
+    marginY: "15px",
   },
-  sectionBox: {
-    marginBottom: "20px",
-  },
+  sectionBox: {},
   accordionHeader: {
     transition: "background-color 0.3s ease",
     "&:hover": {

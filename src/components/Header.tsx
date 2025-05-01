@@ -14,21 +14,15 @@ export default function HeaderSummary() {
         {info.title}
       </Typography>
       <Divider sx={styles.divider} />
-      <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
-        <Stack direction={"row"} spacing={2} sx={styles.headerSubtitle}>
-          <ContactChip
-            label="locale"
-            value={info.locale}
-            Icon={<LocationCity />}
-          />
-          <ContactChip label="email" value={info.email} Icon={<Email />} />
-          <ContactChip
-            label="cell"
-            value={info.cell}
-            Icon={<PhoneCallback />}
-          />
-        </Stack>
-      </div>
+      <Stack direction={"row"} spacing={2} justifyContent={"center"}>
+        <ContactChip
+          label="locale"
+          value={info.locale}
+          Icon={<LocationCity />}
+        />
+        <ContactChip label="email" value={info.email} Icon={<Email />} />
+        <ContactChip label="cell" value={info.cell} Icon={<PhoneCallback />} />
+      </Stack>
     </div>
   );
 }
