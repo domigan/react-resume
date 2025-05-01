@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import { Box, Stack, Typography } from "@mui/material";
+import { Grid, Stack } from "@mui/material";
 import Track from "./Track";
 import { Search } from "./Search";
 import { Stop, PlayArrow, SkipNext } from "@mui/icons-material";
@@ -29,35 +29,44 @@ export default function Playback({
 }) {
   return (
     <Stack className="controls" spacing={2}>
-      <Stack direction={"row"} spacing={2}>
-        {!playing && (
-          <Button variant="contained" onClick={play} endIcon={<PlayArrow />}>
-            {/* <PlayArrowIcon /> */}
-            PLAY
-          </Button>
-        )}
-        {playing && (
+      <Grid container spacing={2} className="playback-btns">
+        <Grid>
+          {!playing && (
+            <Button variant="contained" onClick={play} endIcon={<PlayArrow />}>
+              {/* <PlayArrowIcon /> */}
+              PLAY
+            </Button>
+          )}
+        </Grid>
+        <Grid>
           <Button
             variant="contained"
             className="playback-btn"
-            onClick={stop}
-            endIcon={<Stop />}
+            onClick={skip}
+            endIcon={<SkipNext />}
           >
-            {/* <StopIcon /> */}
-            STOP
+            {/* <SkipNextIcon /> */}
+            NEXT
           </Button>
+        </Grid>
+
+        {playing && (
+          <Grid>
+            <Button
+              variant="contained"
+              className="playback-btn"
+              onClick={stop}
+              endIcon={<Stop />}
+            >
+              {/* <StopIcon /> */}
+              STOP
+            </Button>
+          </Grid>
         )}
-        <Button
-          variant="contained"
-          className="playback-btn"
-          onClick={skip}
-          endIcon={<SkipNext />}
-        >
-          {/* <SkipNextIcon /> */}
-          NEXT
-        </Button>
-      </Stack>
-      <Track title={title} artist={user.name} link={link} />
+        <Grid width={"100%"}>
+          <Track title={title} artist={user.name} link={link} />
+        </Grid>
+      </Grid>
       <Search onChange={select_genre} selected_genre={selected_genre} />
     </Stack>
   );

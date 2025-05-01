@@ -89,7 +89,7 @@ export default function AnimatedBackground({
         position: fillParent ? "absolute" : "fixed",
         top: 0,
         left: 0,
-        zIndex: -1,
+        zIndex: -10000000,
         width: fillParent ? "100%" : undefined,
         height: fillParent ? "100%" : undefined,
       }}

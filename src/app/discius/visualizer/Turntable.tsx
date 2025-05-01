@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { list_tracks, start_stream } from "../actions/actions";
 import { genres, random_genre } from "../actions/utils";
 import { AudiusTrack } from "@/types/Audius.type";
-import { Box, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 import Playback from "../player/Playback";
 import Queue from "../player/Queue";
 import Vinyl from "./Vinyl";
@@ -90,8 +90,8 @@ export default function Turntable() {
 
   const { selected_track, playing, selected_genre, queue, queue_index } = state;
   return (
-    <Stack direction={"row"} spacing={2}>
-      <Stack className="playback-queue-container" spacing={2}>
+    <>
+      <Box className="playback-queue-container">
         {selected_track && (
           <div className="track-container">
             <AnimatedBackground fillParent={true} />
@@ -109,12 +109,12 @@ export default function Turntable() {
           </div>
         )}
         <Queue queue={queue} queue_index={queue_index} />
-      </Stack>
+      </Box>
       <Box className="vinyl-container col-8">
         {selected_track && selected_track.artwork && (
           <Vinyl artwork={selected_track.artwork} playing={playing} />
         )}
       </Box>
-    </Stack>
+    </>
   );
 }
