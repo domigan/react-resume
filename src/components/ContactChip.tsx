@@ -1,5 +1,5 @@
-import React from "react";
-import { Button, Chip, Tooltip } from "@mui/material";
+import React, { useState } from "react";
+import { Button, Chip, Popover, Typography } from "@mui/material";
 import { styles } from "@/app/styles";
 
 interface ContactChipProps {
@@ -9,19 +9,46 @@ interface ContactChipProps {
 }
 
 const ContactChip: React.FC<ContactChipProps> = ({ label, value, Icon }) => {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+  const handleOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+
   return (
-    <Tooltip title={value}>
-      <Button variant="text">
+    <>
+      <Button variant="text" onClick={handleOpen}>
         <Chip
           icon={Icon || undefined}
           variant="outlined"
           color="secondary"
-          size="small"
           label={label}
+          sx={{ padding: "10px", fontWeight: "700" }}
           style={styles.chip}
         />
       </Button>
-    </Tooltip>
+      <Popover
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "center",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
+      >
+        <Typography sx={{ padding: "10px" }}>{value}</Typography>
+      </Popover>
+    </>
   );
 };
 

@@ -1,3 +1,10 @@
+export const info = {
+  name: "Colin Baillie",
+  locale: "Boston, MA",
+  email: "domigan16@gmail.com",
+  cell: "(339) 927-5951",
+};
+
 export const exp = [
   {
     company: "1up Health",
@@ -71,4 +78,19 @@ export const skills = [
   "Strong experience with the Atlassian suite including Jira, Confluence, and Bitbucket",
   "Experience with various design and prototyping tools including Figma & Canva",
   "Experience with various CI/CD tools including Jenkins & CircleCI",
+];
+
+export const projects = [
+  {
+    title: "Discius Music Player",
+    description:
+      "A music player that uses the Audius API to play music. It is built with React and TypeScript. It is a work in progress and is not fully designed yet. Adding more features and improving the design is on my to-do list.",
+    link: "/discius",
+  },
+  {
+    title: "Music Production Home Page",
+    description:
+      "My personal music production home page. It is a constant work in progress as I am releasing new music and updating the site. It is built with raw HTML, CSS, and JavaScript. Uses a variety of embedded players to play music. Essentially a code golf project to see how small I can make my site while still being functional.",
+    link: "http://domigan.co/lin",
+  },
 ];

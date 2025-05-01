@@ -2,28 +2,25 @@ import { Stack, Typography } from "@mui/material";
 import { styles } from "@/app/styles";
 import ContactChip from "./ContactChip";
 import { Email, LocationCity, PhoneCallback } from "@mui/icons-material";
+import { info } from "@/app/colin.data";
 
 export default function HeaderSummary() {
   return (
     <div style={styles.headerPaper}>
       <Typography variant="h3" align="center" sx={styles.headerTitle}>
-        Colin Baillie
+        {info.name}
       </Typography>
       <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
         <Stack direction={"row"} spacing={2} sx={styles.headerSubtitle}>
           <ContactChip
             label="locale"
-            value="Boston, MA"
+            value={info.locale}
             Icon={<LocationCity />}
           />
-          <ContactChip
-            label="email"
-            value="domigan16@gmail.com"
-            Icon={<Email />}
-          />
+          <ContactChip label="email" value={info.email} Icon={<Email />} />
           <ContactChip
             label="cell"
-            value="(339) 927-5951"
+            value={info.cell}
             Icon={<PhoneCallback />}
           />
         </Stack>

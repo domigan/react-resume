@@ -13,7 +13,7 @@ import {
 import { styles } from "../app/styles";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import Expando from "./Expando";
-import { exp, skills } from "../app/colin.data";
+import { exp, projects, skills } from "../app/colin.data";
 import LikeList from "./LikeList";
 import Accolades from "./Accolades";
 import HeaderSummary from "./HeaderSummary";
@@ -22,10 +22,10 @@ import { Section } from "./Section";
 import { Project } from "./Project";
 
 export default function Main() {
-  const [value, setValue] = React.useState("one");
+  const [tabValue, setTabValue] = React.useState("one");
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
+    setTabValue(newValue);
   };
 
   const sections: Record<string, React.ReactNode> = {
@@ -56,17 +56,14 @@ export default function Main() {
     ),
     five: (
       <Section title="Projects">
-        <Project
-          title="Discius Music Player"
-          description="A music player that uses the Audius API to play music. It is built with React and TypeScript. It is a work in progress and is not fully designed yet. Adding more features and improving the design is on my to-do list."
-          link="/discius"
-        />
-        <Divider sx={styles.divider} />
-        <Project
-          title="Music Production Home Page"
-          description="My personal music production home page. It is a constant work in progress as I am releasing new music and updating the site. It is built with raw HTML, CSS, and JavaScript. Uses a variety of embedded players to play music. Essentially a code golf project to see how small I can make my site while still being functional."
-          link="http://domigan.co/lin"
-        />
+        {projects.map((project, index) => (
+          <Project
+            key={`project-${index}`}
+            title={project.title}
+            description={project.description}
+            link={project.link}
+          />
+        ))}
       </Section>
     ),
   };
@@ -76,7 +73,7 @@ export default function Main() {
       <Header />
       <Divider sx={styles.divider} />
       <Tabs
-        value={value}
+        value={tabValue}
         onChange={handleChange}
         textColor="inherit"
         indicatorColor="secondary"
@@ -90,7 +87,7 @@ export default function Main() {
         <Tab value="five" label="Projects" />
       </Tabs>
       <Divider sx={{ backgroundColor: "#424242", marginY: "20px" }} />
-      {sections[value]}
+      {sections[tabValue]}
     </div>
   );
 }
