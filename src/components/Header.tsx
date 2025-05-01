@@ -4,11 +4,7 @@ import ContactChip from "./ContactChip";
 import { Email, LocationCity, PhoneCallback } from "@mui/icons-material";
 import { info } from "@/app/colin.data";
 
-export default function HeaderSummary({
-  isMobile = false,
-}: {
-  isMobile?: boolean;
-}) {
+export default function HeaderSummary() {
   return (
     <div style={styles.headerPaper}>
       <Typography variant="h2" align="center" sx={styles.headerTitle}>

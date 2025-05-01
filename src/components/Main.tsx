@@ -65,7 +65,7 @@ export default function Main() {
 
   return (
     <div style={styles.card}>
-      <Header isMobile={isMobile} />
+      <Header />
       <Divider sx={styles.divider} />
       <Tabs
         value={tabValue}
