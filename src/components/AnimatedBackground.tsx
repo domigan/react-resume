@@ -41,7 +41,7 @@ export default function AnimatedBackground({
     const drawGradient = () => {
       if (!ctx) return;
 
-      gradientOffset += 0.001; // Increase speed of the animation
+      gradientOffset += 0.005; // Increase speed of the animation
 
       const centerX = canvas.width / 2;
       const centerY = canvas.height / 2;

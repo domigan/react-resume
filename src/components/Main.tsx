@@ -69,7 +69,20 @@ export default function Main() {
         textColor="inherit"
         indicatorColor="secondary"
         aria-label="secondary tabs example"
-        variant="scrollable"
+        variant="fullWidth"
+        sx={{
+          alignContent: "center",
+          justifyContent: "center",
+          alignItems: "center",
+          display: "flex",
+          flexDirection: "row",
+          gap: "10px",
+          padding: "10px",
+          marginBottom: "20px",
+          backgroundImage: "linear-gradient(45deg, #1e1e1e, #424242)",
+          backgroundColor: "#424242",
+          borderRadius: "10px",
+        }}
       >
         <Tab value="one" label="Summary" />
         <Tab value="two" label="Skills" />

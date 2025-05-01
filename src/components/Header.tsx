@@ -7,7 +7,7 @@ import { info } from "@/app/colin.data";
 export default function HeaderSummary() {
   return (
     <div style={styles.headerPaper}>
-      <Typography variant="h3" align="center" sx={styles.headerTitle}>
+      <Typography variant="h2" align="center" sx={styles.headerTitle}>
         {info.name}
       </Typography>
       <Divider sx={styles.divider} />
