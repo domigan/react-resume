@@ -59,9 +59,7 @@ export default function Main() {
     ),
   };
 
-  const isMobile = useMemo(() => {
-    return typeof window !== "undefined" && window.innerWidth < 600;
-  }, [window]);
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 600;
 
   return (
     <div style={styles.card}>
