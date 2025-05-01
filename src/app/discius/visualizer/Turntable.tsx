@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { list_tracks, start_stream } from "../actions/actions";
 import { genres, random_genre } from "../actions/utils";
 import { AudiusTrack } from "@/types/Audius.type";
