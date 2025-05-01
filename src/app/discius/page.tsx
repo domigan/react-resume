@@ -6,7 +6,7 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 export default function Discius() {
   return (
     <>
-      <AnimatedBackground invert={true} fillParent={true} />
+      <AnimatedBackground invert={true} />
       <Turntable />
     </>
   );

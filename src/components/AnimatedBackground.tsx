@@ -58,7 +58,7 @@ export default function AnimatedBackground({
         maxRadius
       );
 
-      const color1 = invert ? "#c6c6c6" : "#00793d";
+      const color1 = invert ? "#000000" : "#00793d";
       const color2 = invert ? "#00793d" : "#00ff7f";
       gradient.addColorStop(0, color1);
       gradient.addColorStop(1, color2);
@@ -89,7 +89,7 @@ export default function AnimatedBackground({
         position: fillParent ? "absolute" : "fixed",
         top: 0,
         left: 0,
-        zIndex: -10000000,
+        zIndex: -1,
         width: fillParent ? "100%" : undefined,
         height: fillParent ? "100%" : undefined,
       }}
