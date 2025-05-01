@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import {
   Box,
   Typography,
@@ -15,14 +16,59 @@ import Expando from "./Expando";
 import { exp, skills } from "../app/colin.data";
 import LikeList from "./LikeList";
 import Accolades from "./Accolades";
-import React from "react";
 import HeaderSummary from "./HeaderSummary";
 import Header from "./Header";
+import { Section } from "./Section";
+import { Project } from "./Project";
 
 export default function Main() {
   const [value, setValue] = React.useState("one");
+
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
+  };
+
+  const sections: Record<string, React.ReactNode> = {
+    one: <HeaderSummary />,
+    two: (
+      <Section title="Skills">
+        <LikeList title="Skills" body={skills} />
+      </Section>
+    ),
+    three: (
+      <Section title="Experience">
+        <Stack spacing={2}>
+          {exp.map((job, index) => (
+            <Expando
+              key={index}
+              title={job.company}
+              subtitle={`${job.jobTitle} | ${job.location} | ${job.dates}`}
+              body={job.details}
+            />
+          ))}
+        </Stack>
+      </Section>
+    ),
+    four: (
+      <Box sx={styles.sectionBox}>
+        <Accolades />
+      </Box>
+    ),
+    five: (
+      <Section title="Projects">
+        <Project
+          title="Discius Music Player"
+          description="A music player that uses the Audius API to play music. It is built with React and TypeScript. It is a work in progress and is not fully designed yet. Adding more features and improving the design is on my to-do list."
+          link="/discius"
+        />
+        <Divider sx={styles.divider} />
+        <Project
+          title="Music Production Home Page"
+          description="My personal music production home page. It is a constant work in progress as I am releasing new music and updating the site. It is built with raw HTML, CSS, and JavaScript. Uses a variety of embedded players to play music. Essentially a code golf project to see how small I can make my site while still being functional."
+          link="http://domigan.co/lin"
+        />
+      </Section>
+    ),
   };
 
   return (
@@ -44,98 +90,7 @@ export default function Main() {
         <Tab value="five" label="Projects" />
       </Tabs>
       <Divider sx={{ backgroundColor: "#424242", marginY: "20px" }} />
-      {value === "one" && <HeaderSummary />}
-      {/* Skills Section */}
-      {value === "two" && (
-        <Box sx={{ marginBottom: "20px" }}>
-          <Typography
-            variant="h5"
-            sx={{ marginBottom: "10px", color: "#90caf9" }}
-          >
-            Skills
-          </Typography>
-          <LikeList title="Skills" body={skills} />
-        </Box>
-      )}
-      {/* Experience Section */}
-      {value === "three" && (
-        <Box sx={styles.sectionBox}>
-          <Typography
-            variant="h5"
-            sx={{ marginBottom: "10px", color: "#90caf9" }}
-          >
-            Experience
-          </Typography>
-
-          <Stack spacing={2}>
-            {exp.map((job, index) => (
-              <Expando
-                key={index}
-                title={job.company}
-                subtitle={`${job.jobTitle} | ${job.location} | ${job.dates}`}
-                body={job.details}
-              />
-            ))}
-          </Stack>
-        </Box>
-      )}
-      {/* Education Section */}
-      {value === "four" && (
-        <Box sx={styles.sectionBox}>
-          <Accolades />
-        </Box>
-      )}
-      {value === "five" && (
-        <Box sx={styles.sectionBox}>
-          <Typography
-            variant="h5"
-            sx={{ marginBottom: "10px", color: "#90caf9" }}
-          >
-            Projects
-          </Typography>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => {
-              window.open("/discius", "_blank");
-            }}
-            startIcon={<ThumbUpOffAltIcon />}
-          >
-            Discius Music Player
-          </Button>
-          <Typography
-            variant="body1"
-            sx={{ marginTop: "10px", color: "#b0bec5" }}
-          >
-            A music player that uses the Audius API to play music. It is built
-            with React and TypeScript. It is a work in progress and is not fully
-            designed yet. Adding more features and improving the design is on my
-            to-do list.
-          </Typography>
-
-          <Divider sx={styles.divider} />
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => {
-              window.open("http://domigan.co/lin", "_blank");
-            }}
-            startIcon={<ThumbUpOffAltIcon />}
-          >
-            Music Production Home Page
-          </Button>
-          <Typography
-            variant="body1"
-            sx={{ marginTop: "10px", color: "#b0bec5" }}
-          >
-            My personal music production home page. It is a constant work in
-            progress as I am releasing new music and updating the site. It is
-            built with raw HTML, CSS, and JavaScript. Uses a variety of embeded
-            players to play music. Essentially a code golf project to see how
-            small I can make my site while still being functional.
-          </Typography>
-        </Box>
-      )}
+      {sections[value]}
     </div>
   );
 }
