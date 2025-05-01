@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useMemo } from "react";
 import { Box, Stack, Tabs, Tab, Divider } from "@mui/material";
 import { styles } from "../app/styles";
 import Expando from "./Expando";
@@ -59,10 +59,13 @@ export default function Main() {
     ),
   };
 
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 600;
+  const isMobile = useMemo(() => {
+    return typeof window !== "undefined" && window.innerWidth < 600;
+  }, [window]);
+
   return (
     <div style={styles.card}>
-      <Header />
+      <Header isMobile={isMobile} />
       <Divider sx={styles.divider} />
       <Tabs
         value={tabValue}

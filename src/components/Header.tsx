@@ -4,7 +4,11 @@ import ContactChip from "./ContactChip";
 import { Email, LocationCity, PhoneCallback } from "@mui/icons-material";
 import { info } from "@/app/colin.data";
 
-export default function HeaderSummary() {
+export default function HeaderSummary({
+  isMobile = false,
+}: {
+  isMobile?: boolean;
+}) {
   return (
     <div style={styles.headerPaper}>
       <Typography variant="h2" align="center" sx={styles.headerTitle}>
@@ -14,7 +18,11 @@ export default function HeaderSummary() {
         {info.title}
       </Typography>
       <Divider sx={styles.divider} />
-      <Stack direction={"row"} spacing={2} justifyContent={"center"}>
+      <Stack
+        direction={isMobile ? "column" : "row"}
+        spacing={2}
+        justifyContent={"center"}
+      >
         <ContactChip
           label="locale"
           value={info.locale}
