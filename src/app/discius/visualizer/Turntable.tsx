@@ -101,7 +101,7 @@ export default function Turntable() {
               stop={stop}
               playing={playing}
               title={selected_track.title}
-              artist={selected_track.user.name}
+              user={selected_track.user}
               link={selected_track.permalink}
               select_genre={select_genre}
               selected_genre={selected_genre}

@@ -4,8 +4,10 @@ import { useEffect, useRef } from "react";
 
 export default function AnimatedBackground({
   fillParent = false,
+  invert = false,
 }: {
   fillParent?: boolean;
+  invert?: boolean;
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -55,8 +57,11 @@ export default function AnimatedBackground({
         centerY,
         maxRadius
       );
-      gradient.addColorStop(0, `#00793d`);
-      gradient.addColorStop(1, `#00ff7f`);
+
+      const color1 = invert ? "#c6c6c6" : "#00793d";
+      const color2 = invert ? "#00793d" : "#00ff7f";
+      gradient.addColorStop(0, color1);
+      gradient.addColorStop(1, color2);
 
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);

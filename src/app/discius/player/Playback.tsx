@@ -1,9 +1,10 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import { Stack } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import Track from "./Track";
 import { Search } from "./Search";
 import { Stop, PlayArrow, SkipNext } from "@mui/icons-material";
+import { AudiusUser } from "@/types/Audius.type";
 
 export default function Playback({
   play,
@@ -11,7 +12,7 @@ export default function Playback({
   skip,
   playing,
   title,
-  artist,
+  user,
   link,
   select_genre,
   selected_genre,
@@ -21,7 +22,7 @@ export default function Playback({
   skip: () => void;
   playing: boolean;
   title: string;
-  artist: string;
+  user: AudiusUser;
   link: string;
   select_genre: (genre: string) => void;
   selected_genre: string;
@@ -55,8 +56,8 @@ export default function Playback({
           {/* <SkipNextIcon /> */}
           NEXT
         </Button>
-        <Track title={title} artist={artist} link={link} />
       </Stack>
+      <Track title={title} artist={user.name} link={link} />
       <Search onChange={select_genre} selected_genre={selected_genre} />
     </Stack>
   );

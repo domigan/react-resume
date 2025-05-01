@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 
 export default function Track({
@@ -12,12 +12,12 @@ export default function Track({
 }) {
   return (
     <div className="track-info">
-      <p>
+      <Box>
         <Typography variant="body1" sx={{ color: "aquamarine" }}>
           Artist: {artist}
         </Typography>
-      </p>
-      <p>
+      </Box>
+      <Box>
         <i>
           <a href={`https://www.audius.co${link}`} target={"_blank"}>
             <Typography variant="body1" sx={{ color: "aquamarine" }}>
@@ -25,7 +25,7 @@ export default function Track({
             </Typography>
           </a>
         </i>
-      </p>
+      </Box>
     </div>
   );
 }
