@@ -1,5 +1,3 @@
-import { title } from "process";
-
 export const info = {
   name: "Colin Baillie",
   title: "Sr. Web Software Engineer | Music Producer | Film Enthusiast",
