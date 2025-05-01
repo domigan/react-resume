@@ -18,11 +18,7 @@ export default function HeaderSummary({
         {info.title}
       </Typography>
       <Divider sx={styles.divider} />
-      <Stack
-        direction={isMobile ? "column" : "row"}
-        spacing={2}
-        justifyContent={"center"}
-      >
+      <Stack spacing={1} justifyContent={"center"}>
         <ContactChip
           label="locale"
           value={info.locale}
