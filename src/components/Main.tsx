@@ -8,7 +8,6 @@ import {
   Tab,
   Divider,
   Button,
-  Card,
 } from "@mui/material";
 import { styles } from "../app/styles";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
