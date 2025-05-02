@@ -3,7 +3,11 @@ import { styles } from "@/app/styles";
 import { info } from "@/app/colin.data";
 import Contact from "./Contact";
 
-export default function HeaderSummary() {
+export default function HeaderSummary({
+  isMobile = false,
+}: {
+  isMobile?: boolean;
+}) {
   return (
     <div style={styles.headerPaper}>
       <Typography variant="h2" align="center" sx={styles.headerTitle}>
@@ -12,7 +16,7 @@ export default function HeaderSummary() {
       <Typography variant="body1" align="center" sx={styles.headerTitle}>
         {info.title}
       </Typography>
-      <Contact />
+      <Contact isMobile={isMobile} />
     </div>
   );
 }

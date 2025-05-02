@@ -1,6 +1,6 @@
 "use client";
 
-import { Stack, Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import { styles } from "@/app/styles";
 
 export default function HeaderSummary() {
@@ -25,6 +25,15 @@ export default function HeaderSummary() {
           and singles. My other hobbies include snowboarding, golf, disc golf,
           viewing fine film and television, and travelling with my family.
         </Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          href="/Resume_Colin_Baillie_2025.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Download PDF Resume
+        </Button>
       </Stack>
     </>
   );

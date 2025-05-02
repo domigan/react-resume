@@ -3,11 +3,11 @@ import { Stack } from "@mui/material";
 import ContactChip from "./ContactChip";
 import { info } from "@/app/colin.data";
 
-export default function Contact() {
+export default function Contact({ isMobile = false }: { isMobile?: boolean }) {
   return (
     <Stack
       spacing={1}
-      direction={"row"}
+      direction={isMobile ? "column" : "row"}
       alignItems={"center"}
       sx={{
         padding: "10px",

@@ -29,7 +29,7 @@ const ContactChip: React.FC<ContactChipProps> = ({ label, value, Icon }) => {
           variant="outlined"
           color="secondary"
           label={label}
-          sx={{ fontWeight: "700" }}
+          sx={{ fontWeight: "700", padding: "20px" }}
           style={styles.chip}
         />
       </Button>
