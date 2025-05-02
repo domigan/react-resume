@@ -3,6 +3,7 @@ import { styles } from "@/app/styles";
 import ContactChip from "./ContactChip";
 import { Email, LocationCity, PhoneCallback } from "@mui/icons-material";
 import { info } from "@/app/colin.data";
+import Contact from "./Contact";
 
 export default function HeaderSummary() {
   return (
@@ -13,16 +14,7 @@ export default function HeaderSummary() {
       <Typography variant="body1" align="center" sx={styles.headerTitle}>
         {info.title}
       </Typography>
-      <Divider sx={styles.divider} />
-      <Stack spacing={1} justifyContent={"center"}>
-        <ContactChip
-          label="locale"
-          value={info.locale}
-          Icon={<LocationCity />}
-        />
-        <ContactChip label="email" value={info.email} Icon={<Email />} />
-        <ContactChip label="cell" value={info.cell} Icon={<PhoneCallback />} />
-      </Stack>
+      <Contact />
     </div>
   );
 }
