@@ -1,7 +1,5 @@
-import { Divider, Stack, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { styles } from "@/app/styles";
-import ContactChip from "./ContactChip";
-import { Email, LocationCity, PhoneCallback } from "@mui/icons-material";
 import { info } from "@/app/colin.data";
 import Contact from "./Contact";
 
