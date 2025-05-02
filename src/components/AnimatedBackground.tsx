@@ -80,7 +80,7 @@ export default function AnimatedBackground({
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [fillParent]);
+  }, [fillParent, invert]);
 
   return (
     <canvas
