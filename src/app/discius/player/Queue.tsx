@@ -3,7 +3,7 @@ import List from "@mui/material/List";
 import Track from "./Track";
 import ListItem from "@mui/material/ListItem";
 import { AudiusTrack } from "@/types/Audius.type";
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
 export default function Queue({
   queue,

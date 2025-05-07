@@ -4,7 +4,7 @@ import { Grid, Stack } from "@mui/material";
 import Track from "./Track";
 import { Search } from "./Search";
 import { Stop, PlayArrow, SkipNext } from "@mui/icons-material";
-import { AudiusTrack, AudiusUser } from "@/types/Audius.type";
+import { AudiusTrack } from "@/types/Audius.type";
 
 export default function Playback({
   disabled,
