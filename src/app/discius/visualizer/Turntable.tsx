@@ -90,13 +90,7 @@ export default function Turntable() {
       setState({ ...state, queue, selected_track });
     };
     fetchTracks();
-  }, [state]);
-
-  useEffect(() => {
-    if (state.playing && state.audio) {
-      setState({ ...state, disabled: false });
-    }
-  }, [state]);
+  }, []);
 
   const { selected_track, playing, selected_genre, queue, queue_index } = state;
   return (
