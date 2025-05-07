@@ -68,6 +68,7 @@ export type AudiusTrack = {
   title: string;
   user: AudiusUser;
   duration: number;
+  link: string;
   is_downloadable: boolean;
   play_count: number;
   permalink: string;

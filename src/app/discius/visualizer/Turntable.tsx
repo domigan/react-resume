@@ -95,18 +95,28 @@ export default function Turntable() {
   const { selected_track, playing, selected_genre, queue, queue_index } = state;
   return (
     <>
-      <Box className="playback-queue-container">
+      <Box
+        sx={{
+          position: "absolute",
+          zIndex: 1000,
+          backgroundColor: "#ffffff",
+          color: "#000000",
+          maxWidth: "600px",
+          maxHeight: "fit-content",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+          border: "5px solid #ccc",
+          borderRadius: "5px",
+        }}
+      >
         {selected_track && (
-          <div className="track-container">
+          <div>
             <AnimatedBackground fillParent={true} />
             <Playback
               disabled={state.disabled}
               play={play}
               skip={skip}
               playing={playing}
-              title={selected_track.title}
-              user={selected_track.user}
-              link={selected_track.permalink}
+              selected_track={selected_track}
               select_genre={select_genre}
               selected_genre={selected_genre}
             />

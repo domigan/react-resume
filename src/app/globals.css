@@ -37,11 +37,12 @@ code {
     monospace;
 }
 
-.queue-item:nth-child(2n) {
-  background-color: grey;
-}
-.queue-item:nth-child(2n + 1) {
-  background-color: cornflowerblue;
+.queue-item {
+  opacity: 0.2;
+  color: #000000;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
 }
 
 .playback-btn {
@@ -51,12 +52,7 @@ code {
 .dropdown-menu {
   overflow-y: auto;
 }
-.track-queue {
-  max-height: 400px;
-  overflow-y: auto;
-  font-size: small;
-  border: 5px solid #00793d;
-}
+
 .controls {
   padding: 10px;
 }
@@ -68,23 +64,6 @@ code {
 .vinyl-container {
   align-items: center;
   justify-content: center;
-}
-
-.playback-queue-container {
-  position: absolute;
-  z-index: 1000;
-  background-color: #ffffff;
-  color: #282c34;
-  max-width: 520px;
-  max-height: fit-content;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border: 5px solid #ccc;
-  border-radius: 5px;
-}
-
-.track-container {
-  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-  font-size: medium;
 }
 
 .image1 {

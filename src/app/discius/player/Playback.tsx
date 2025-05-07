@@ -4,16 +4,14 @@ import { Grid, Stack } from "@mui/material";
 import Track from "./Track";
 import { Search } from "./Search";
 import { Stop, PlayArrow, SkipNext } from "@mui/icons-material";
-import { AudiusUser } from "@/types/Audius.type";
+import { AudiusTrack, AudiusUser } from "@/types/Audius.type";
 
 export default function Playback({
   disabled,
   play,
   skip,
   playing,
-  title,
-  user,
-  link,
+  selected_track,
   select_genre,
   selected_genre,
 }: {
@@ -21,9 +19,7 @@ export default function Playback({
   play: () => void;
   skip: () => void;
   playing: boolean;
-  title: string;
-  user: AudiusUser;
-  link: string;
+  selected_track: AudiusTrack | null;
   select_genre: (genre: string) => void;
   selected_genre: string;
 }) {
@@ -54,7 +50,16 @@ export default function Playback({
         </Grid>
 
         <Grid width={"100%"}>
-          <Track title={title} artist={user.name} link={link} />
+          {selected_track ? (
+            <Track
+              displayHeader={true}
+              title={selected_track.title}
+              artist={selected_track.user.name}
+              link={selected_track.link}
+            />
+          ) : (
+            <div>No track selected</div>
+          )}
         </Grid>
       </Grid>
       <Search onChange={select_genre} selected_genre={selected_genre} />
