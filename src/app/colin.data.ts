@@ -85,31 +85,25 @@ export const projects = [
   {
     title: "Discius Music Player",
     description:
-      "A music player that uses the Audius API to play music. This app is built with React and TypeScript. This is an ongoing work in progress and is not fully designed yet. Adding more features and improving the design is on my to-do list.",
+      "A music player built using the Audius API to stream music. This application is developed with React and TypeScript and is an ongoing project. Future plans include adding more features and enhancing the design for a better user experience.",
     link: "/discius",
   },
   {
     title: "Music Production Home Page",
     description:
-      "My personal music production home page. This webpage is a constant work in progress as I am releasing new music and updating the site. Built with raw HTML, CSS, and JavaScript. Uses a variety of embedded players to play music. Essentially a code golf project to see how small I can make my site while still being functional.",
+      "My personal music production homepage, which is constantly evolving as I release new music and update the site. Built with raw HTML, CSS, and JavaScript, it features various embedded players for music playback. This project is a code golf challenge to create a functional yet minimalistic site.",
     link: "http://www.domigan.co/lin",
   },
   {
     title: "Painting By Pelzer Website",
     description:
-      "A website for a family friend. This site showcases their artwork and provides information about their services, paintings, and sculptures for sale.",
+      "A website created for a family friend to showcase their artwork. It provides information about their services, as well as paintings and sculptures available for sale.",
     link: "http://www.paintingbypelzer.com",
   },
-  // {
-  //   title: "Ideal Music",
-  //   description:
-  //     "music label thing.",
-  //   link: "http://www.idealmusiccollect.com",
-  // },
   {
     title: "The Collect Pond",
     description:
-      "website for a post-punk band based in Boston, MA, also whom i did a remix for.",
+      "A website for a post-punk band based in Boston, MA, for whom I also created a remix. The site highlights their music and provides information about the band.",
     link: "http://www.thecollectpond.com",
   },
 ];
