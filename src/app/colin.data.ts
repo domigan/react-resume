@@ -94,22 +94,22 @@ export const projects = [
       "My personal music production home page. This webpage is a constant work in progress as I am releasing new music and updating the site. Built with raw HTML, CSS, and JavaScript. Uses a variety of embedded players to play music. Essentially a code golf project to see how small I can make my site while still being functional.",
     link: "http://www.domigan.co/lin",
   },
-  // {
-  //   title: "Painting By Pelzer Website",
-  //   description:
-  //     "A website for a family friend. This site showcases their artwork and provides information about their services, paintings, and sculptures for sale.",
-  //   link: "http://www.paintingbypelzer.com",
-  // },
+  {
+    title: "Painting By Pelzer Website",
+    description:
+      "A website for a family friend. This site showcases their artwork and provides information about their services, paintings, and sculptures for sale.",
+    link: "http://www.paintingbypelzer.com",
+  },
   // {
   //   title: "Ideal Music",
   //   description:
   //     "music label thing.",
   //   link: "http://www.idealmusiccollect.com",
   // },
-  // {
-  //   title: "The Collect Pond",
-  //   description:
-  //     "music band.",
-  //   link: "http://www.thecollectpond.com",
-  // },
+  {
+    title: "The Collect Pond",
+    description:
+      "website for a post-punk band based in Boston, MA, also whom i did a remix for.",
+    link: "http://www.thecollectpond.com",
+  },
 ];
