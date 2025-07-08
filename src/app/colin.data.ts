@@ -91,7 +91,7 @@ export const projects = [
   {
     title: "Music Production Home Page",
     description:
-      "My personal music production homepage, which is constantly evolving as I release new music and update the site. Built with raw HTML, CSS, and JavaScript, it features various embedded players for music playback. This project is a code golf challenge to create a functional yet minimalistic site.",
+      "My personal music production homepage, which is constantly evolving as I release new music and update the site. Originally built with raw HTML, CSS, and JavaScript, it features various embedded players for music playback. This project is a code golf challenge to create a functional yet minimalistic site. I've recently revamped it using React and TypeScript for better maintainability and style.",
     link: "http://www.domigan.co/lin",
   },
   {
