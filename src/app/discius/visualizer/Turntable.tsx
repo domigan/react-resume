@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { list_tracks, start_stream } from "../actions/actions";
-import { genres, random_genre } from "../actions/utils";
+import AnimatedBackground from "@/components/AnimatedBackground";
 import { AudiusTrack } from "@/types/Audius.type";
 import { Box } from "@mui/material";
+import { useEffect, useState } from "react";
+import "../../globals.css";
+import { genres, random_genre } from "../actions/utils";
 import Playback from "../player/Playback";
 import Queue from "../player/Queue";
 import Vinyl from "./Vinyl";
-import "../../globals.css";
-import AnimatedBackground from "@/components/AnimatedBackground";
 
 export type MusicState = {
   playing: boolean;
@@ -31,7 +30,13 @@ const initState: MusicState = {
   disabled: false,
 };
 
-export default function Turntable() {
+export default function Turntable({
+  start_stream,
+  list_tracks,
+}: {
+  start_stream: (trackId: string) => Promise<HTMLAudioElement> | undefined;
+  list_tracks: (genre: string) => Promise<AudiusTrack[]> | undefined;
+}) {
   const [state, setState] = useState(initState);
 
   const play = async () => {
@@ -41,7 +46,7 @@ export default function Turntable() {
       const audio = await start_stream(selected_track.id);
 
       if (audio) {
-        audio.onemptied = (e) => {
+        audio.onemptied = (e: Event) => {
           e.stopPropagation();
           skip();
           play();
@@ -58,7 +63,7 @@ export default function Turntable() {
     stop();
     let { queue, queue_index } = state;
     if (queue.length - 1 === queue_index) {
-      queue = await list_tracks(random_genre());
+      queue = (await list_tracks(random_genre())) || [];
       queue_index = 0;
     } else {
       queue_index++;
@@ -78,14 +83,14 @@ export default function Turntable() {
 
   const select_genre = async (genre: string) => {
     stop();
-    const queue = await list_tracks(genre);
+    const queue = (await list_tracks(genre)) || [];
     const selected_track = queue && queue.length ? queue[0] : null;
     setState({ ...state, queue, selected_track, selected_genre: genre });
   };
 
   useEffect(() => {
     const fetchTracks = async () => {
-      const queue = await list_tracks(state.selected_genre);
+      const queue = (await list_tracks(state.selected_genre)) || [];
       const selected_track = queue && queue.length ? queue[0] : null;
       setState({ ...state, queue, selected_track });
     };
