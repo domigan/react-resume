@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import AnimatedBackground from "@/components/AnimatedBackground";
+import { AudiusTrack } from "@/types/Audius.type";
+import { useEffect, useState } from "react";
+import "../../globals.css";
 import { list_tracks, start_stream } from "../actions/actions";
 import { genres, random_genre } from "../actions/utils";
-import { AudiusTrack } from "@/types/Audius.type";
-import { Box } from "@mui/material";
 import Playback from "../player/Playback";
 import Queue from "../player/Queue";
 import Vinyl from "./Vinyl";
-import "../../globals.css";
-import AnimatedBackground from "@/components/AnimatedBackground";
 
 export type MusicState = {
   playing: boolean;
@@ -95,15 +94,14 @@ export default function Turntable() {
   const { selected_track, playing, selected_genre, queue, queue_index } = state;
   return (
     <>
-      <Box
-        sx={{
+      <div
+        style={{
           position: "absolute",
           zIndex: 1000,
           backgroundColor: "#ffffff",
           color: "#000000",
           maxWidth: "600px",
           maxHeight: "fit-content",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
           border: "5px solid #ccc",
           borderRadius: "5px",
         }}
@@ -123,12 +121,12 @@ export default function Turntable() {
           </div>
         )}
         <Queue queue={queue} queue_index={queue_index} />
-      </Box>
-      <Box className="vinyl-container col-8">
+      </div>
+      <div className="vinyl-container col-8">
         {selected_track && selected_track.artwork && (
           <Vinyl artwork={selected_track.artwork} playing={playing} />
         )}
-      </Box>
+      </div>
     </>
   );
 }
