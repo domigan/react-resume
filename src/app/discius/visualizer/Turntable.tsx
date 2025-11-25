@@ -3,6 +3,7 @@
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { AudiusTrack } from "@/types/Audius.type";
 import { useEffect, useState } from "react";
+// @ts-ignore: side-effect import of global CSS without type declarations
 import "../../globals.css";
 import { list_tracks, start_stream } from "../actions/actions";
 import { genres, random_genre } from "../actions/utils";
@@ -45,7 +46,7 @@ export default function Turntable() {
           skip();
           play();
         };
-        setState({ ...state, playing: true, audio, disabled: true });
+        setState({ ...state, playing: true, audio, disabled: false });
       } else {
         console.error("Error starting audio stream");
         setState({ ...state, playing: false });
